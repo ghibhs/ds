@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var acceleration: float = 1500.0
 @export var friction: float = 1200.0
 
+var coins: int = 0
 # Referência do nó de gravidade
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
