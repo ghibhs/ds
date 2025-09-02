@@ -29,3 +29,18 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	
 	move_and_slide()
+	
+signal coins_changed(new_amount)
+	
+func _ready():
+	# Conecta o sinal à UI
+	var ui = get_node("../Control")  # ou onde sua UI estiver
+	coins_changed.connect(ui._on_coins_updated)
+
+func add_coins(amount):
+	coins += amount
+	coins_changed.emit(coins)  # Emite o sinal com a nova quantidade
+	print("Moedas: ", coins)
+
+func remove_coins(amount):
+	coins -= amount
