@@ -1,7 +1,7 @@
 extends Camera2D
 @export var follow_speed: float = 5.0
-@export var offset_distance: Vector2 = Vector2(0, -50)
-@export var look_ahead_distance: float = 100.0
+@export var offset_distance: Vector2 = Vector2(0, -20)
+@export var look_ahead_distance: float = 5
 @export var smoothing_enabled: bool = true
 
 var target_position: Vector2
